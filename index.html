@@ -809,21 +809,21 @@
     gap: 10px;
   }
   .qr-frame{
+    display: block;
     background: #0F0F10;
     border: 1px solid var(--line);
     padding: 12px;
+    transition: border-color 0.25s ease;
   }
-  .qr-grid{
-    display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    grid-template-rows: repeat(11, 1fr);
+  .qr-frame:hover,
+  .qr-frame:focus-visible{
+    border-color: var(--gold);
+  }
+  .qr-image{
+    display: block;
     width: clamp(120px, 30vw, 160px);
     height: clamp(120px, 30vw, 160px);
-    gap: 1px;
-    background: #0F0F10;
   }
-  .qr-cell{ background: transparent; }
-  .qr-cell.on{ background: var(--gold); }
   .qr-caption{
     font-size: 10px;
     letter-spacing: 0.12em;
@@ -1658,16 +1658,16 @@
       </div>
 
       <div class="qr-wrap">
-        <div class="qr-frame">
-          <div class="qr-grid" id="qrGrid" aria-hidden="true"></div>
-        </div>
+        <a class="qr-frame" href="https://senteryeloge.com" target="_blank" rel="noopener noreferrer" aria-label="senteryeloge.com">
+          <img class="qr-image" src="qr-code.svg" width="160" height="160" alt="QR code vers senteryeloge.com" loading="lazy">
+        </a>
         <div class="qr-caption">
-          <span class="t" data-fr="QR code — illustration décorative, non fonctionnel" data-en="QR code — decorative illustration, not functional">QR code — illustration décorative, non fonctionnel</span>
+          <span class="t" data-fr="Scannez pour ouvrir ce portfolio" data-en="Scan to open this portfolio">Scannez pour ouvrir ce portfolio</span>
         </div>
       </div>
     </div>
     <p class="qr-note reveal r3">
-      <span class="t" data-fr="Le QR code définitif renverra vers ce portfolio dès que le nom de domaine sera choisi." data-en="The final QR code will link to this portfolio once a domain name has been chosen.">Le QR code définitif renverra vers ce portfolio dès que le nom de domaine sera choisi.</span>
+      <span class="t" data-fr="Le QR code renvoie vers senteryeloge.com." data-en="The QR code links to senteryeloge.com.">Le QR code renvoie vers senteryeloge.com.</span>
     </p>
 
     <div class="contact-details reveal r4">
@@ -1729,32 +1729,6 @@
   }
 })();
 
-(function(){
-  // ---- Decorative QR pattern (non-functional, purely visual) ----
-  var rows = [
-    "11101010111",
-    "11100100111",
-    "11101110111",
-    "00001001000",
-    "10110101101",
-    "01001010010",
-    "10010101001",
-    "01100010011",
-    "11101010010",
-    "11100101100",
-    "11101100101"
-  ];
-  var pattern = rows.join("");
-  var grid = document.getElementById("qrGrid");
-  if(!grid) return;
-  var frag = document.createDocumentFragment();
-  for (var i = 0; i < pattern.length; i++){
-    var cell = document.createElement("div");
-    cell.className = "qr-cell" + (pattern.charAt(i) === "1" ? " on" : "");
-    frag.appendChild(cell);
-  }
-  grid.appendChild(frag);
-})();
 </script>
 </body>
 </html>
