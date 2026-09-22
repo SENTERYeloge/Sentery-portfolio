@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sentery Eloge — Contact</title>
+<meta name="description" content="Carte de contact numérique de Sentery Eloge, Data Analyst — appelez, écrivez sur WhatsApp, consultez le CV ou ajoutez ses coordonnées en un geste.">
+<link rel="canonical" href="https://senteryeloge.com/connect">
+
+<meta property="og:site_name" content="Sentery Eloge — Contact">
+<meta property="og:title" content="Sentery Eloge — Contact">
+<meta property="og:description" content="Toutes les coordonnées professionnelles de Sentery Eloge, réunies sur une seule page.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://senteryeloge.com/connect">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://senteryeloge.com/og-image.png">
+<meta property="og:image:secure_url" content="https://senteryeloge.com/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sentery Eloge — Data Analyst">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sentery Eloge — Contact">
+<meta name="twitter:description" content="Toutes les coordonnées professionnelles de Sentery Eloge, réunies sur une seule page.">
+<meta name="twitter:image" content="https://senteryeloge.com/og-image.png">
+
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --black: #0B0B0C;
+    --black-2: #141414;
+    --black-3: #1B1A17;
+    --gold: #C9A24B;
+    --gold-soft: #A9863C;
+    --gold-bright: #E4C878;
+    --ivory: #F3EFE6;
+    --ivory-dim: #C9C3B4;
+    --line: rgba(201,162,75,0.35);
+    --line-soft: rgba(201,162,75,0.16);
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *{ box-sizing: border-box; }
+  html{ background: var(--black); }
+  body{
+    margin: 0;
+    background: var(--black);
+    color: var(--ivory);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif{ font-family: 'Cormorant Garamond', serif; }
+  a{ color: inherit; text-decoration: none; }
+
+  .page{
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+  }
+  .wrap{
+    width: 100%;
+    max-width: 460px;
+    padding: 28px 20px 48px;
+  }
+
+  /* top bar */
+  .topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: clamp(28px, 8vw, 40px);
+  }
+  .topbar a{
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ivory-dim);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 3px;
+    transition: color .25s ease, border-color .25s ease;
+  }
+  .topbar a:hover{ color: var(--gold-bright); border-color: var(--gold); }
+  .lang-tag{
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    border: 1px solid var(--line);
+    padding: 4px 8px;
+  }
+
+  /* identity */
+  .identity{ text-align: center; margin-bottom: clamp(26px, 7vw, 36px); }
+  .monogram{
+    width: 54px; height: 54px; margin: 0 auto 16px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; letter-spacing: 0.04em;
+    color: var(--gold-bright);
+  }
+  .id-name{
+    font-size: clamp(1.7rem, 7vw, 2.1rem);
+    letter-spacing: 0.05em;
+    margin: 0 0 6px;
+    color: var(--ivory);
+  }
+  .id-role{
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .id-loc{
+    font-size: 0.85rem;
+    color: var(--ivory-dim);
+    letter-spacing: 0.03em;
+  }
+  .id-loc .dot{ color: var(--gold); margin: 0 6px; }
+
+  .hairline{
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 0 clamp(24px, 6vw, 32px);
+    opacity: 0.8;
+  }
+
+  .eyebrow{
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 14px;
+  }
+
+  /* quick actions grid */
+  .actions{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: clamp(30px, 7vw, 40px);
+  }
+  @media (max-width: 380px){
+    .actions{ grid-template-columns: repeat(3, 1fr); }
+  }
+  .action{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 4px 12px;
+    background: var(--black-2);
+    border: 1px solid var(--line);
+    transition: border-color .2s ease, background .2s ease, transform .15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .action:active{ transform: scale(0.96); }
+  .action:hover, .action:focus-visible{ border-color: var(--gold); background: var(--black-3); }
+  .action svg{ width: 21px; height: 21px; stroke: var(--gold-bright); fill: none; }
+  .action .label{
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ivory-dim);
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* contact rows */
+  .rows{
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--line-soft);
+    border: 1px solid var(--line-soft);
+    margin-bottom: clamp(26px, 6vw, 34px);
+  }
+  .row{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 14px;
+    background: var(--black-2);
+    transition: background .2s ease;
+  }
+  a.row:hover, a.row:focus-visible{ background: var(--black-3); }
+  .row .ic{
+    flex: none;
+    width: 30px; height: 30px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--line);
+    color: var(--gold-bright);
+  }
+  .row .ic svg{ width: 15px; height: 15px; stroke: var(--gold-bright); fill: none; }
+  .row .txt{ min-width: 0; flex: 1; }
+  .row .label{
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2px;
+  }
+  .row .value{
+    font-size: 0.92rem;
+    color: var(--ivory);
+    letter-spacing: 0.01em;
+    overflow-wrap: anywhere;
+  }
+  .row .value.muted{ color: var(--ivory-dim); font-style: italic; font-size: 0.85rem; }
+  .row .chev{ flex: none; color: var(--ivory-dim); font-size: 14px; opacity: 0.6; }
+  .row.multi .txt{ display: flex; flex-direction: column; gap: 6px; }
+  .row.multi .value a{ color: var(--ivory); border-bottom: 1px solid transparent; }
+  .row.multi .value a:hover{ color: var(--gold-bright); border-bottom-color: var(--gold); }
+
+  .note{
+    font-size: 11px;
+    color: var(--ivory-dim);
+    font-style: italic;
+    line-height: 1.6;
+    margin: -14px 0 clamp(26px, 6vw, 34px);
+  }
+
+  .availability{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold-bright);
+    text-align: center;
+    margin: 0 0 clamp(30px, 7vw, 38px);
+    line-height: 1.5;
+  }
+
+  footer{
+    text-align: center;
+    padding-top: 18px;
+    border-top: 1px solid var(--line-soft);
+  }
+  footer .fname{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--ivory-dim);
+    margin-bottom: 6px;
+  }
+  footer .furl{
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .wrap{ animation: fade-up 0.5s ease both; }
+    @keyframes fade-up{
+      from{ opacity: 0; transform: translateY(8px); }
+      to{ opacity: 1; transform: translateY(0); }
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="wrap">
+
+    <div class="topbar">
+      <a href="/">← Portfolio</a>
+      <span class="lang-tag">FR</span>
+    </div>
+
+    <div class="identity">
+      <div class="monogram">SE</div>
+      <h1 class="id-name serif">Sentery Eloge</h1>
+      <div class="id-role">Data Analyst</div>
+      <div class="id-loc">Kinshasa, RDC <span class="dot">•</span> Disponible à l'international</div>
+    </div>
+
+    <div class="hairline"></div>
+
+    <p class="eyebrow">Actions rapides</p>
+    <div class="actions">
+
+      <a class="action" href="https://wa.me/243818989562" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir WhatsApp">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 3.5a10.5 10.5 0 0 0-17.8 10.9L2 21l6.8-1.6A10.5 10.5 0 0 0 20.5 3.5z"/><path d="M8.3 8.2c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4.2.5.7 1.7.7 1.8.1.2.1.3 0 .5-.1.2-.2.3-.3.4-.2.2-.3.3-.1.6.5.8 1 1.4 1.7 1.9.7.5 1 .5 1.2.4.2-.1.6-.6.8-.9.2-.2.3-.2.5-.1.2.1 1.5.7 1.7.8.2.1.4.2.4.3.1.4 0 .9-.2 1.3-.3.5-1.3.9-1.8.9-.5.1-1 .1-3.2-1-2.6-1.2-4.2-4-4.4-4.2-.1-.2-1-1.3-1-2.5 0-1.1.6-1.7.8-2z"/></svg>
+        <span class="label">WhatsApp</span>
+      </a>
+
+      <a class="action" href="tel:+243818989562" aria-label="Appeler">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 4h3.2l1.5 4.5-2.2 1.6a12 12 0 0 0 5.9 5.9l1.6-2.2 4.5 1.5v3.2c0 .9-.8 1.6-1.7 1.5C9.9 19.4 4.6 14.1 4 6.7 3.9 5.8 4.6 4 4.5 4z"/></svg>
+        <span class="label">Appeler</span>
+      </a>
+
+      <a class="action" href="mailto:contact@senteryeloge.com" aria-label="Envoyer un email">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.2"/><path d="M4.5 6.5l7.5 6 7.5-6"/></svg>
+        <span class="label">Email</span>
+      </a>
+
+      <a class="action" href="https://www.linkedin.com/in/eloge-sentery-a58b161b8/" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir LinkedIn">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M7.8 10v6.2M7.8 7.6v.02M11.6 16.2V10M11.6 12.6c0-1.4 1-2.6 2.4-2.6 1.3 0 2.2 1 2.2 2.6v3.6"/></svg>
+        <span class="label">LinkedIn</span>
+      </a>
+
+      <a class="action" href="https://github.com/SENTERYeloge" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir GitHub">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c-4.7 0-8.5 3.9-8.5 8.7 0 3.8 2.4 7.1 5.9 8.2.4.1.6-.2.6-.4v-1.6c-2.4.5-2.9-1.2-2.9-1.2-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.5 2.2 1 2.7.8.1-.6.3-1 .6-1.3-1.9-.2-4-1-4-4.4 0-1 .3-1.7.9-2.4-.1-.2-.4-1.1.1-2.4 0 0 .7-.2 2.4.9.7-.2 1.5-.3 2.2-.3.7 0 1.5.1 2.2.3 1.7-1.1 2.4-.9 2.4-.9.5 1.3.2 2.2.1 2.4.6.7.9 1.4.9 2.4 0 3.4-2.1 4.2-4 4.4.3.3.6.9.6 1.8v2.6c0 .2.2.5.6.4 3.5-1.1 5.9-4.4 5.9-8.2 0-4.8-3.8-8.7-8.5-8.7z"/></svg>
+        <span class="label">GitHub</span>
+      </a>
+
+      <a class="action" href="/" aria-label="Ouvrir le portfolio">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.3"/><path d="M3.7 12h16.6M12 3.7c2.1 2.3 3.3 5.2 3.3 8.3s-1.2 6-3.3 8.3c-2.1-2.3-3.3-5.2-3.3-8.3S9.9 6 12 3.7z"/></svg>
+        <span class="label">Portfolio</span>
+      </a>
+
+      <a class="action" href="/CV_Sentery_Eloge.pdf" download aria-label="Télécharger le CV">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11.4M8 11l4 4 4-4"/><path d="M4.5 16.5v2.2c0 1 .8 1.8 1.8 1.8h11.4c1 0 1.8-.8 1.8-1.8v-2.2"/></svg>
+        <span class="label">CV</span>
+      </a>
+
+      <a class="action" href="/sentery-eloge.vcf" download="Sentery-Eloge.vcf" aria-label="Ajouter aux contacts">
+        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.6"/><circle cx="9" cy="11" r="2"/><path d="M6 16c0-1.7 1.3-2.8 3-2.8s3 1.1 3 2.8"/><path d="M16 9.5h3M16 12.5h3"/></svg>
+        <span class="label">Ajouter au&nbsp;carnet</span>
+      </a>
+
+    </div>
+
+    <div class="hairline"></div>
+
+    <p class="eyebrow">Coordonnées complètes</p>
+    <div class="rows">
+
+      <a class="row" href="tel:+243818989562">
+        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 4h3.2l1.5 4.5-2.2 1.6a12 12 0 0 0 5.9 5.9l1.6-2.2 4.5 1.5v3.2c0 .9-.8 1.6-1.7 1.5C9.9 19.4 4.6 14.1 4 6.7 3.9 5.8 4.6 4 4.5 4z"/></svg></span>
+        <span class="txt">
+          <span class="label">Téléphone principal</span>
+          <span class="value">+243 818 989 562</span>
+        </span>
+        <span class="chev">›</span>
+      </a>
+
+      <div class="row multi">
+        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 4h3.2l1.5 4.5-2.2 1.6a12 12 0 0 0 5.9 5.9l1.6-2.2 4.5 1.5v3.2c0 .9-.8 1.6-1.7 1.5C9.9 19.4 4.6 14.1 4 6.7 3.9 5.8 4.6 4 4.5 4z"/></svg></span>
+        <span class="txt">
+          <span class="label">Autres numéros</span>
+          <span class="value"><a href="tel:+243812882888">+243 812 882 888</a></span>
+          <span class="value"><a href="tel:+243820000139">+243 820 000 139</a></span>
+        </span>
+      </div>
+
+      <a class="row" href="https://wa.me/243818989562" target="_blank" rel="noopener noreferrer">
+        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 3.5a10.5 10.5 0 0 0-17.8 10.9L2 21l6.8-1.6A10.5 10.5 0 0 0 20.5 3.5z"/></svg></span>
+        <span class="txt">
+          <span class="label">WhatsApp</span>
+          <span class="value">+243 818 989 562</span>
+        </span>
+        <span class="chev">›</span>
+      </a>
+
+      <a class="row" href="mailto:contact@senteryeloge.com">
+        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.2"/><path d="M4.5 6.5l7.5 6 7.5-6"/></svg></span>
+        <span class="txt">
+          <span class="label">Email</span>
+          <span class="value">contact@senteryeloge.com</span>
+        </span>
+        <span class="chev">›</span>
+      </a>
+
+      <a class="row" href="https://www.linkedin.com/in/eloge-sentery-a58b161b8/" target="_blank" rel="noopener noreferrer">
+        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M7.8 10v6.2M7.8 7.6v.02M11.6 16.2V10M11.6 12.6c0-1.4 1-2.6 2.4-2.6 1.3 0 2.2 1 2.2 2.6v3.6"/></svg></span>
+        <span class="txt">
+          <span class="label">LinkedIn</span>
+          <span class="value">linkedin.com/in/eloge-sentery</span>
+        </span>
+        <span class="chev">›</span>
+      </a>
+
+      <a class="row" href="https://github.com/SENTERYeloge" target="_blank" rel="noopener noreferrer">
+        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c-4.7 0-8.5 3.9-8.5 8.7 0 3.8 2.4 7.1 5.9 8.2.4.1.6-.2.6-.4v-1.6c-2.4.5-2.9-1.2-2.9-1.2-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.5 2.2 1 2.7.8.1-.6.3-1 .6-1.3-1.9-.2-4-1-4-4.4 0-1 .3-1.7.9-2.4-.1-.2-.4-1.1.1-2.4 0 0 .7-.2 2.4.9.7-.2 1.5-.3 2.2-.3.7 0 1.5.1 2.2.3 1.7-1.1 2.4-.9 2.4-.9.5 1.3.2 2.2.1 2.4.6.7.9 1.4.9 2.4 0 3.4-2.1 4.2-4 4.4.3.3.6.9.6 1.8v2.6c0 .2.2.5.6.4 3.5-1.1 5.9-4.4 5.9-8.2 0-4.8-3.8-8.7-8.5-8.7z"/></svg></span>
+        <span class="txt">
+          <span class="label">GitHub</span>
+          <span class="value">github.com/SENTERYeloge</span>
+        </span>
+        <span class="chev">›</span>
+      </a>
+
+      <a class="row" href="/" >
+        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.3"/><path d="M3.7 12h16.6M12 3.7c2.1 2.3 3.3 5.2 3.3 8.3s-1.2 6-3.3 8.3c-2.1-2.3-3.3-5.2-3.3-8.3S9.9 6 12 3.7z"/></svg></span>
+        <span class="txt">
+          <span class="label">Portfolio</span>
+          <span class="value">senteryeloge.com</span>
+        </span>
+        <span class="chev">›</span>
+      </a>
+
+      <a class="row" href="/CV_Sentery_Eloge.pdf" download>
+        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11.4M8 11l4 4 4-4"/></svg></span>
+        <span class="txt">
+          <span class="label">CV</span>
+          <span class="value">Consulter / télécharger le PDF</span>
+        </span>
+        <span class="chev">›</span>
+      </a>
+
+      <a class="row" href="/sentery-eloge.vcf" download="Sentery-Eloge.vcf">
+        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.6"/><circle cx="9" cy="11" r="2"/></svg></span>
+        <span class="txt">
+          <span class="label">Ajouter aux contacts</span>
+          <span class="value">Enregistrer la fiche vCard</span>
+        </span>
+        <span class="chev">›</span>
+      </a>
+
+      <div class="row">
+        <span class="ic"><svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l2 4.2 4.6.7-3.3 3.2.8 4.6-4.1-2.2-4.1 2.2.8-4.6-3.3-3.2 4.6-.7z"/></svg></span>
+        <span class="txt">
+          <span class="label">Références</span>
+          <span class="value muted">Disponibles sur demande</span>
+        </span>
+      </div>
+
+    </div>
+
+    <p class="note">Le bouton « Ajouter aux contacts » télécharge une fiche vCard (.vcf) — ouvrez-la pour enregistrer directement ces coordonnées dans votre téléphone.</p>
+
+    <p class="availability">Disponible pour des opportunités, projets et collaborations à l'international.</p>
+
+    <footer>
+      <div class="fname serif">Sentery Eloge</div>
+      <div class="furl">senteryeloge.com/connect</div>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>
